@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long int i,k,n,w,price=0;
+
+    //taking input from the user.
+    scanf("%ld %ld %ld",&k,&n,&w);
+
+    //calculating the banana's price.
+    for(i=1; i<=w; i++)
+    {
+        price+=k*i;
+    }
+
+    //calculating and printing borrowed money.
+    if((price-n)>0)
+    {
+        printf("%ld",(price-n));
+    }
+    else
+    {
+        printf("0\n");
+    }
+    return 0;
+}
