@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdbool.h>
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+
+    //taking the number of input of array size.
+    int arr[n];
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+    bool flag=false;
+
+    for(i=0; i<n; i++)
+    {
+        if(arr[i]==1)
+        {
+            flag=true;
+        }
+    }
+
+    //checking--> if the problem is easy or hard.
+    if(flag==true) printf("HARD");
+    else  printf("EASY");
+
+    return 0;
+}
