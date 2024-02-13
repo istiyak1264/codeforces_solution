@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);//t is the number of test cases.
+    while(t--)
+    {
+        char str[7];
+        int sum1=0,sum2=0,i;
+
+        //taking input from the user.
+        scanf("%s",&str);
+
+        //calculating the sum of 1st and last 3 digits.
+        for(i=0; i<6; i++)
+        {
+            if(i<=2) sum1+=(int)str[i];//typecasting of char to int
+            else sum2+=(int)str[i];
+        }
+
+        //checking the conditions.
+        if(sum1==sum2) printf("YES\n");
+        else printf("NO\n");
+    }
+
+    return 0;
+}
