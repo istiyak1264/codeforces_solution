@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+int area(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4)
+{
+    int arm;
+    if(x1==x2) arm=abs(y1-y2);
+    else if(x2==x3) arm=abs(y2-y3);
+    else if(x3==x4) arm=abs(y3-y4);
+    else if(x4==x1) arm=abs(y4-y1);
+    else if(y1==y2) arm=abs(x1-x2);
+    else if(y2==y3) arm=abs(x2-x3);
+    else if(y3==y4) arm=abs(x3-x4);
+    else if(y4==y1) arm=abs(x4-x1);
+
+    return arm*arm;
+}
+int main()
+{
+    int t;
+    scanf("%d",&t);//t refers to number of test cases.
+
+    while(t--)
+    {
+        int n;
+        int x1,x2,x3,x4,y1,y2,y3,y4;
+        scanf("%d %d",&x1,&y1);
+        scanf("%d %d",&x2,&y2);
+        scanf("%d %d",&x3,&y3);
+        scanf("%d %d",&x4,&y4);
+
+        n=area(x1,x2,x3,x4,y1,y2,y3,y4);
+        printf("%d\n",n);
+    }
+    return 0;
+}
