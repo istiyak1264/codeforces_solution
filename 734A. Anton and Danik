@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int i,n,count1=0, count2=0;
+    scanf("%d",&n);
+    char s[n];
+    //taking input from the user.
+    scanf("%s",s);
+
+    //counting the most games winner.
+    for(i=0; i<n; i++)
+    {
+        if(s[i]=='A')
+        {
+            count1++;
+        }
+        else
+        {
+            count2++;
+        }
+    }
+
+    //checking the conditions and printing output.
+    if(count1>count2)
+    {
+        printf("Anton");
+    }
+    else if(count2>count1)
+    {
+        printf("Danik");
+    }
+    else
+    {
+        printf("Friendship");
+    }
+
+
+    return 0;
+}
