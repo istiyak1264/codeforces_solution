@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    int i,n,h,count=0;
+    scanf("%d %d",&n,&h);
+    int a[n];
+
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+    for(i=0; i<n; i++)
+    {
+        if(a[i]<=h)
+        {
+            count+=1;
+        }
+        else
+        {
+            count+=2;
+        }
+    }
+    printf("%d",count);
+
+    return 0;
+}
