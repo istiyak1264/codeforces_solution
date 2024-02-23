@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define N 200005
+char arr[N];
+char a1[N], b1[N];
+long long a[N], b[N], q[N], s[N], w[N], xy[N], l, r, v, x, y, j;
+char s1[N], s2[N], s3[N];
+
+void bubbleSort(char arr[], int len)
+{
+    for (int i = 0; i < len - 1; i++)
+    {
+        for (int j = 0; j < len - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                // Swap characters
+                char temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    scanf("%s %s %s", s1, s2, s3);
+
+    strcat(a1, s1);
+    strcat(a1, s2);
+
+    int len_s4 = strlen(a1);
+    int len_s3 = strlen(s3);
+
+    bubbleSort(a1, len_s4);
+    bubbleSort(s3, len_s3);
+
+    if (strcmp(a1, s3) == 0)
+    {
+        printf("YES");
+    }
+    else
+    {
+        printf("NO");
+    }
+
+    return 0;
+}
