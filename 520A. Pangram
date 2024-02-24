@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdbool.h>
+int main()
+{
+    int len;
+    scanf("%d",&len);
+    char s[len+1]; // +1 for null terminator
+    scanf("%s",s);
+
+    bool S[26]={false};
+
+    for(int i = 0; i < len; i++)
+    {
+        if(s[i]>='A' && s[i]<='Z') s[i] +='a'-'A';
+        if(s[i]>='a' && s[i]<='z') S[s[i]-'a']=true;
+
+    }
+
+    bool allLettersPresent=true;
+    for (int i=0; i<26; i++)
+    {
+        if (!S[i])
+        {
+            allLettersPresent=false;
+            break;
+        }
+    }
+
+    if(allLettersPresent) printf("YES\n");
+    else printf("NO\n");
+
+    return 0;
+}
+
