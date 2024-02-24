@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+    int n, m;
+    scanf("%d %d",&n,&m);
+    int dot=1;
+    for (int i=0; i<n; i++)
+    {
+        if (i%2==0)
+        {
+            for (int j=0; j<m; j++)
+            {
+                printf("#");
+            }
+            printf("\n");
+            continue;
+        }
+        if (i%2==1 && dot==1)
+        {
+            for (int j=0; j<m-1; j++)
+            {
+                printf(".");
+            }
+            printf("#\n");
+            dot=0;
+            continue;
+        }
+        if (i%2==1 && dot==0)
+        {
+            printf("#");
+            for (int j=0; j<m-1; j++)
+            {
+                printf(".");
+            }
+            printf("\n");
+            dot=1;
+            continue;
+        }
+    }
+    return 0;
+}
+
