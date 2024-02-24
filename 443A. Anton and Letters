@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[1000];
+    int i;
+    int count[26] = {0}; // Array to store the count of each lowercase letter
+    fgets(s, sizeof(s), stdin);
+
+    for (i=0; i<strlen(s); i++)
+    {
+        if (s[i]>='a' && s[i]<='z')
+        {
+            count[s[i] - 'a']++; // Increment the count of the corresponding letter
+        }
+    }
+
+    int chars=0;
+    for (i=0; i<26; i++)
+    {
+        if (count[i]>0)
+        {
+            chars++; // Count the distinct characters
+        }
+    }
+    printf("%d\n",chars);
+
+    return 0;
+}
