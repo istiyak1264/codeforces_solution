@@ -5,6 +5,7 @@ int main()
     char s[1000];
     int i;
     int count[26] = {0}; // Array to store the count of each lowercase letter
+
     fgets(s, sizeof(s), stdin);
 
     for (i=0; i<strlen(s); i++)
