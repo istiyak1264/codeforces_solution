@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<math.h>
+
+#define ll long long
+#define ull unsigned long long
+
+ll mypow(ll a, ll b) {
+    ll ans = 1;
+    a %= 1000000007;
+    while(b) {
+        if (b & 1) 
+            ans = (ans * a) % 1000000007;
+        a = (a * a) % 1000000007;
+        b >>= 1;
+    }
+    return ans;
+}
+
+void solve() {
+    ll a, b, l;
+    scanf("%lld %lld %lld", &a, &b, &l);
+    int st[10000], idx = 0;
+
+    for (ll x = 0; mypow(a, x) <= l; ++x) {
+        for (ll y = 0; mypow(b, y) <= l; ++y) {
+            ll res = mypow(a, x) * mypow(b, y);
+            if (l % res == 0) {
+                int found = 0;
+                for (int i = 0; i < idx; i++) {
+                    if (st[i] == l / res) {
+                        found = 1;
+                        break;
+                    }
+                }
+                if (!found) {
+                    st[idx++] = l / res;
+                }
+            }
+        }
+    }
+    printf("%d\n", idx);
+}
+
+int main() {
+    int TC = 1;
+    scanf("%d", &TC);
+    while (TC--) 
+        solve();
+    return 0;
+}
