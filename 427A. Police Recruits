@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+    int i,n,e,p=0,c=0;
+    scanf("%d", &n);
+
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&e);
+        if(e == -1)
+        {
+            if(p>0) p--;
+            else c++;
+        }
+        else p+=e;
+    }
+
+    printf("%d\n",c);
+
+    return 0;
+}
