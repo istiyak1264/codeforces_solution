@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+    int i,n,amazing=0;
+    scanf("%d", &n);
+
+    int points[n];
+    for (i=0; i<n; i++)
+    {
+        scanf("%d", &points[i]);
+    }
+
+    int max_points = points[0];
+    int min_points = points[0];
+
+    for(i=1; i<n; i++)
+    {
+        if(points[i] > max_points)
+        {
+            amazing++;
+            max_points = points[i];
+        }
+        if(points[i] < min_points)
+        {
+            amazing++;
+            min_points = points[i];
+        }
+    }
+
+    printf("%d\n", amazing);
+
+    return 0;
+}
