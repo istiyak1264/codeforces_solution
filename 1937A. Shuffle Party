@@ -1,0 +1,23 @@
+#include <stdio.h>
+long long Position_1(long long n)
+{
+    long long position = 1;
+    while(position * 2 <= n)
+    {
+        position *= 2;
+    }
+    return position;
+}
+
+int main()
+{
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        long long n;
+        scanf("%lld", &n);
+        printf("%lld\n", Position_1(n));
+    }
+    return 0;
+}
