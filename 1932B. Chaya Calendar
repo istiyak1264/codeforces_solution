@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+
+    int i,n,x,t;
+    scanf("%d",&t);
+
+    while(t--)
+    {
+        scanf("%d", &n);
+        long ans=0;
+
+        for(i=0; i<n; i++)
+        {
+            scanf("%d",&x);
+            ans = ((ans / x) + 1) * x;
+        }
+
+        printf("%ld \n",ans);
+    }
+    return 0;
+}
