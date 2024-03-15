@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+    long long n,t;
+    scanf("%lld", &t);
+    while (t--)
+    {
+        scanf("%lld", &n);
+        while (n != 1)
+        {
+            if(n % 2 == 0) n/=2;
+            else
+            {
+                printf("YES\n");
+                break;
+            }
+        }
+        if(n == 1) printf("NO\n");
+    }
+
+
+    return 0;
+}
