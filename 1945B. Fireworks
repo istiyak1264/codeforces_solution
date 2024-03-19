@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    int T;
+    scanf("%d", &T);
+     while(T--) 
+    {
+        long long a, b, m;
+        scanf("%lld %lld %lld", &a, &b, &m);
+        long long ans = 2 + m / a + m / b;
+        printf("%lld\n", ans);
+    }
+    return 0;
+}
