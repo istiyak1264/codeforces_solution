@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int N;
+
+int main()
+{
+    int T;
+    scanf("%d", &T);
+    while(T--)
+    {
+        scanf("%d", &N);
+        char A[N+1];
+        scanf("%s", A);
+        int l = 0, r = 0;
+        for (int i = 0; i < N; i++)
+        {
+            if (A[i] == '1')
+                r++;
+        }
+        
+        int ansi = -1, ans = 1e9;
+        if (r >= (N + 1) / 2)
+            ansi = 0, ans = N;
+        for (int i = 1; i <= N; i++)
+        {
+            if (A[i - 1] == '1')
+                r--;
+            else
+                l++;
+            if (l >= (i + 1) / 2 && r >= (N - i + 1) / 2)
+            {
+                int t = abs(N - 2 * i);
+                if (ans > t)
+                    ans = t, ansi = i;
+            }
+        }
+        printf("%d\n", ansi);
+    }
+    return 0;
+}
